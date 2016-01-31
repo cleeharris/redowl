@@ -1,8 +1,7 @@
-<% provide(:title, "Home")%>
+<% provide(:title, "Help")%>
 
     <h1>RedOwl Systems</h1>
       <p>
         This is the home page for RedOwl Systems.
       </p>
-
 
