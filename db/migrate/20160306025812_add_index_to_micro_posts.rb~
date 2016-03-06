@@ -1,0 +1,7 @@
+class AddIndexToMicroPosts < ActiveRecord::Migration
+  def change
+    add_column :microposts, :references index: true foreign_key:true
+    add_column :microposts, :timestamps, null: false
+    add_index :microposts, [:user_id, :created_at]
+  end
+end
