@@ -1,0 +1,40 @@
+<% provide(:title, "Products")%>
+
+  <body>
+    <h1>RedOwl Systems</h1>
+    
+ <h2 stye="font-size: 200%;"> Products​ </h2>
+ 
+ <table class=prod_table>
+ 
+ <TR>
+   <TD>
+Donor Management
+   </TD>   <TD>
+Special Event Management
+   </TD>
+ </TR>
+ 
+ <TR>
+   <TD>
+Business Management
+   </TD>   <TD>
+Communications
+  </TD>
+ </TR>
+</table>
+﻿
+
+
+ 
+
+
+ 
+
+
+
+ 
+
+
+  </body>
+

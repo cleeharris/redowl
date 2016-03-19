@@ -271,3 +271,35 @@ span.picture {
     display: block;
   }
 }
+
+.ro_main_links {
+  background-color: red;
+}
+.ro_main_links:link{
+  color:white;
+}
+.ro_main_links:visited{
+  color:white;
+}
+.ro_main_links:hover{
+  color:red;
+  background-color: white;
+}
+.ro_main_links:active{
+  color:white;
+}
+
+.prod_table {
+  width: 100%;
+  background-color: red;
+  text-align: center;
+  tr {
+    height:200px;
+    vertical-align: text-top;
+  }
+  td {
+    font-size: 20pt;
+    border: 5px solid white;
+    padding: 10px;
+  }
+}

@@ -2,7 +2,13 @@
   <div class="row">
   
     <aside class="col-md-4">
+    <!--
       <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+     -->
+     
+      <section class="stats">
         <%= render 'shared/user_info' %>
       </section>
       <section class="micropost_form">
@@ -11,7 +17,7 @@
     </aside>
     
     <div class="col-md-8">
-      <h3>Micropost Feed</h3>
+      <h3>Contributions</h3>
       <%= render 'shared/feed' %>
     </div>
     
@@ -24,13 +30,24 @@
 
     <h2>
       This is the home page for the
-      <a>RedOwl Systems NonProfit Management System </a>
-     sample application.
-    </h2>
+      <br><a>RedOwl Systems NonProfit Management System </a>
+      <br>sample application.<br>
 
+      <div style="padding-top: 20px" >
+        <%= link_to "Our vision", vision_path, class: "ro_main_links" %>     
+        <%= link_to "Products", products_path, class: "ro_main_links" %>     
+        <%= link_to "About us", about_path, class: "ro_main_links" %>     
+        <%= link_to "Contact", contact_path, class: "ro_main_links" %>         
+      </div>
+       
+     </h2>
     <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
   </div>
 
-  <%= link_to image_tag("rails.png", alt: "Rails logo"),
-            'http://rubyonrails.org/' %>
-<% end %>
+    
+  <div style="text-align:center" >
+    <%= link_to image_tag("NoTagNoShadow.png", alt: "RedOwl logo", size: "200x100" ),
+            'http://redowlsystems.com/' %>
+  </div>
+
+  <% end %>

@@ -1,0 +1,32 @@
+<% provide(:title, "Vision")%>
+
+  <body>
+    <h1>RedOwl Systems</h1>
+  The Goal: enter data just once​
+
+<p>
+Use and share information across all aspects of your organization.  From donor management and communications to event planning, accounting and on to staff and volunteer management. 
+</p>
+ 
+<p>
+Successful non-profit management requires all the basic business tasks plus comprehensive donor, special event, volunteer and communications tasks.
+</p>
+ 
+<p>
+You will spend less time and money on administrative tasks and more time doing your good work.
+</p>
+
+ <ul>
+  <li>
+    Connect with donors in a more personal way
+  </li>
+  <li>
+    Integrate donor and special event information into the budget and forecasting process
+  </li>
+  </li>
+    Manage staff and programs
+  <li>
+</ul>
+
+  </body>
+

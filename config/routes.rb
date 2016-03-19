@@ -22,6 +22,10 @@ Rails.application.routes.draw do
     end
   end
   
+  get 'vision'      =>'static_pages#vision'
+  get 'products'      =>'static_pages#products'
+
+  
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :users
