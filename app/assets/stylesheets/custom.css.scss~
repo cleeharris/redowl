@@ -214,7 +214,27 @@ input {
   .user {
     margin-top: 5em;
     padding-top: 0;
+         color:white;
   }
+  .nonprofit {
+    margin-top: 5em;
+    padding-top: 0;
+    
+      .nonprofit:link{
+         color:white;
+       }
+      .nonprofit:visited{
+         color:white;
+       }
+       .nonprofit:hover{
+          color:red;
+          background-color: white;
+        }
+       .nonprofit:active{
+          color:white;
+        }
+
+      }
   .content {
     display: block;
     margin-left: 60px;
@@ -300,6 +320,6 @@ span.picture {
   td {
     font-size: 20pt;
     border: 5px solid white;
-    padding: 5px;
+    padding: 10px;
   }
 }

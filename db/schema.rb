@@ -11,17 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319205402) do
+ActiveRecord::Schema.define(version: 20160320222416) do
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content",      limit: 65535
     t.integer  "user_id",      limit: 4
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.string   "picture",      limit: 255
     t.integer  "nonprofit_id", limit: 4
+    t.decimal  "amount",                     precision: 2
   end
 
+  add_index "microposts", ["nonprofit_id"], name: "index_microposts_on_nonprofit_id", using: :btree
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at", using: :btree
   add_index "microposts", ["user_id"], name: "index_microposts_on_user_id", using: :btree
 

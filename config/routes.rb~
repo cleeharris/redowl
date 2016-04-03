@@ -24,9 +24,9 @@ Rails.application.routes.draw do
   
   get 'vision'      =>'static_pages#vision'
   get 'products'      =>'static_pages#products'
-  get 'aboutus'      =>'static_pages#aboutus'
-  get 'contact'      =>'static_pages#contact'
+
   
+  # resources :nonprofits
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :users

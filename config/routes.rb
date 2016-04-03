@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get 'products'      =>'static_pages#products'
 
   
+  resources :nonprofits
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :users
