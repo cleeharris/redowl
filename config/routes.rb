@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   get 'password_resets/new'
 
@@ -17,10 +18,11 @@ Rails.application.routes.draw do
   delete 'logout'   =>'sessions#destroy'
   
   resources :users do
-    member do
-      get :following, :followers
-    end
+    member { get :following, :followers }
+    resources :nonprofits
   end
+  
+ # get 'users/nonprofit'   =>'users#nonprofit'
   
   get 'vision'      =>'static_pages#vision'
   get 'products'      =>'static_pages#products'

@@ -4,7 +4,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 
   def setup
     ActionMailer::Base.deliveries.clear
-  end
+     @np = nonprofits(:np1)
+ end
   
   test "invalid signup information" do
     get signup_path
@@ -25,7 +26,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       post users_path, user: { name:  "Example User",
                                email: "user@example.com",
                                password:              "password",
-                               password_confirmation: "password" }
+                               password_confirmation: "password" },
+                        nonprofit: {name: "teton raptor center" }
     end
     assert_equal 1, ActionMailer::Base.deliveries.size
     user = assigns(:user)
@@ -39,8 +41,10 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     # Valid token, wrong email
     get edit_account_activation_path(user.activation_token, email: 'wrong')
     assert_not is_logged_in?
+    
     # Valid activation token
-    get edit_account_activation_path(user.activation_token, email: user.email)
+    # The edit account isn't storing the nonprofit anywhere
+    get edit_account_activation_path(user.activation_token, email: user.email, nonprofit_name: @np.name)
     assert user.reload.activated?
     follow_redirect!
     assert_template 'users/show'

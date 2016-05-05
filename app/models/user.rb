@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy
+  has_many :nprelations, :foreign_key => "nonprofit_id", dependent: :destroy
+  
   has_many :active_relationships, class_name: "Relationship",
                                   foreign_key: "follower_id",
                                   dependent:   :destroy
@@ -8,6 +10,12 @@ class User < ActiveRecord::Base
                                   dependent:   :destroy                                
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  
+  has_many :nonprofits
+  
+  has_many :nonprofit_relationships, class_name: "Nprelation",
+                                  foreign_key: "nonprofit_id",
+                                  dependent:   :destroy
   
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
@@ -84,6 +92,14 @@ class User < ActiveRecord::Base
   
   def following?(other_user)
     following.include?(other_user)
+  end
+    
+  def manage(nonprofit)
+    nonprofit_relationships.create(nonprofit_id: nonprofit.id)
+  end
+    
+  def unmanage(nonprofit)
+    nonprofit_relationships.find_by(nonprofit_id: nonprofit.id).destroy
   end
   
   def feed

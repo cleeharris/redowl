@@ -1,7 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-np1:
-  name: Teton Raptor Center
+one:
+  user_id: 1
+  nonprofit_id: 1
 
-np2:
-  name: Dancers Workshop
+two:
+  user_id: 1
+  nonprofit_id: 1

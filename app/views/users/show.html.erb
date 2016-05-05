@@ -6,6 +6,9 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+        <% if @nonprofit %>
+          <%= @nonprofit.name %>
+        <% end %>
       </h1>
     </section>
     <section class="stats">

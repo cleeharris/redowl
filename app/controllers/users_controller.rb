@@ -9,6 +9,13 @@ class UsersController < ApplicationController
   end
   
   def show
+  	#  puts "users_controller: nonprofit_name----->" + params[:nonprofit_name]
+  	#  puts caller
+    if params[:nonprofit_name].nil? then
+    	    
+    else
+      @nonprofit = Nonprofit.find_by(name: params[:nonprofit_name].downcase)
+    end
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
   end
@@ -41,6 +48,13 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+  	  
+  def nonprofit
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @nonprofit= Nonprofits.find(params[:id])
+    render 'show_user'
   end
   	  
   def following
