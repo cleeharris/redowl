@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       if user.activated?
         log_in user, nonprofit.name
         params[:session][:remember_me] == '1' ? remember(user, nonprofit.name) : forget(user)
-       # puts "Sessionscontroller#create====================="
+        puts "Sessionscontroller#create====================="
         redirect_back_or user, :nonprofit_name => nonprofit.name
       else
         message  = "Account not activated. "

@@ -48,11 +48,14 @@ module SessionsHelper
   
   def redirect_back_or(default, nonprofit)
     if session[:forwarding_url].nil? then
-      path = user_path(default)
-    	   # puts "redirect_back: path=" + path
+#    path = user_path(@user, :nonprofit_name => @np.name)
+    path = user_path(default, :nonprofit_name => nonprofit[:nonprofit_name])
+  #    path = user_path(default)
+    	    puts "nonprofit=" + nonprofit[:nonprofit_name]
+    	    puts "redirect_back: path=" + path
       redirect_to path
     else
-    	   # puts "redirect_back: else path"
+    	    puts "redirect_back: else path"
       redirect_to(session[:forwarding_url])
     end
 
